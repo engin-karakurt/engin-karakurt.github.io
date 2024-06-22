@@ -1,0 +1,30 @@
+---
+import Slider, { type Project } from "@components/Slider";
+
+let projects: Project[] = [
+  {
+    id: 1,
+    title: "KDE",
+    imgSrc: "kdeLogo.svg",
+    description:
+      "I have contributed to the KDE Community. Click below to visit my KDE GitLab Profile where you can see my contributions!",
+    link: "https://invent.kde.org/engin-karakurt",
+  },
+  {
+    id: 2,
+    title: "Coming soon",
+    imgSrc: "sleepingDog.webp",
+    description: "More Projects!",
+    link: "",
+  },
+];
+---
+
+<section id="my-work-section" class="min-h-svh p-8 flex flex-col gap-8">
+  <h2 class="mt-20 text-4xl font-bold">My Work</h2>
+  <div
+    class="w-full h-full sm:m-auto sm:flex sm:flex-col sm:justify-center sm:items-center"
+  >
+    <Slider client:visible projects={projects} />
+  </div>
+</section>

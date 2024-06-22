@@ -1,0 +1,42 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  imgSrc?: ImageMetadata;
+  title: string;
+  body: string;
+}
+
+export interface CardType {
+  imgSrc?: ImageMetadata;
+  title: string;
+  body: string;
+}
+
+const { imgSrc, title, body } = Astro.props;
+---
+
+<li
+  class="flex flex-col min-h-72 min-w-52 w-fit p-4 justify-between items-center rounded-lg border-2 border-gray-700 bg-gray-950"
+>
+  {
+    imgSrc ? (
+      <div class="flex flex-row justify-center items-center gap-2">
+        <Image
+          class="invert"
+          width={24}
+          height={24}
+          src={imgSrc}
+          alt={""}
+          draggable="false"
+        />
+        <h3 class="lg:text-xl font-bold">{title}</h3>
+      </div>
+    ) : (
+      <h3 class="text-xl font-bold">{title}</h3>
+    )
+  }
+  <p class="max-w-52 text-balance text-center">
+    {body}
+  </p>
+</li>

@@ -1,0 +1,37 @@
+---
+import Card, { type CardType } from "@components/Card.astro";
+import personImage from "@images/person.svg";
+import codeImage from "@images/code.svg";
+import clockImage from "@images/clock.svg";
+
+let cards: CardType[] = [
+  {
+    imgSrc: personImage,
+    title: "Who am I?",
+    body: "I'm a full stack developer from Germany who loves being creative! I enjoy doing things like developing, designing and music.",
+  },
+  {
+    imgSrc: codeImage,
+    title: "What do I develop?",
+    body: "I enjoy working on personal projects to learn and grow from. I also contribute to open source. See my projects below for more information!",
+  },
+  {
+    imgSrc: clockImage,
+    title: "Since when?",
+    body: "I started coding in a workplace for the first time in 2022. Before that I was already curious and created lots of different projects!",
+  },
+];
+---
+
+<section id="about-me-section" class="min-h-svh p-8 flex flex-col gap-8">
+  <h2 class="mt-20 text-4xl font-bold">About Me</h2>
+  <ul
+    class="m-auto flex flex-col justify-center items-center md:flex-row gap-8"
+  >
+    {
+      cards.map((card) => (
+        <Card imgSrc={card.imgSrc} title={card.title} body={card.body} />
+      ))
+    }
+  </ul>
+</section>

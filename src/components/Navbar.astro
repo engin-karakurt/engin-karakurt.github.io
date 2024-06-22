@@ -1,0 +1,102 @@
+<header
+  id="navbar"
+  class="w-[calc(100%-2rem)] fixed top-0 left-0 z-50 bg-black border-2 border-gray-700 rounded-full m-4 transition-transform duration-300"
+>
+  <div class="h-20 flex justify-between items-center px-8">
+    <a href="#top">Engin Karakurt</a>
+    <nav id="nav" class="flex items-center">
+      <button aria-label="Open Menu" id="nav-mobile-button">
+        <img
+          id="nav-mobile-button-img"
+          width={24}
+          height={24}
+          class="sm:hidden invert"
+          src="menu.svg"
+          alt="Menu"
+          draggable="false"
+        />
+      </button>
+    </nav>
+    <ul
+      id="nav-menu"
+      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 bg-black border-2 border-gray-700 sm:border-0 rounded-lg transition-all"
+    >
+      <li>
+        <a id="about-me-link" href="#about-me" class="font-bold">About Me</a>
+      </li>
+      <li>
+        <a id="my-work-link" href="#my-work" class="font-bold">My Work</a>
+      </li>
+      <li>
+        <a id="contact-link" href="#contact" class="font-bold">Contact</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  document.getElementById("about-me-link")?.addEventListener("click", () => {
+    document.getElementById("about-me-section")?.scrollIntoView();
+    closeMenuOnClick();
+  });
+  document.getElementById("my-work-link")?.addEventListener("click", () => {
+    document.getElementById("my-work-section")?.scrollIntoView();
+    closeMenuOnClick();
+  });
+  document.getElementById("contact-link")?.addEventListener("click", () => {
+    document.getElementById("contact-section")?.scrollIntoView();
+    closeMenuOnClick();
+  });
+
+  document
+    .getElementById("nav-mobile-button")
+    ?.addEventListener("click", () => {
+      if (
+        document
+          .getElementById("nav-mobile-button-img")
+          ?.getAttribute("src") === "menu.svg"
+      ) {
+        document
+          .getElementById("nav-mobile-button-img")
+          ?.setAttribute("src", "x.svg");
+        document
+          .getElementById("nav-mobile-button-img")
+          ?.setAttribute("alt", "Close");
+        document
+          .getElementById("nav-mobile-button")
+          ?.setAttribute("aria-label", "Close Menu");
+      } else {
+        document
+          .getElementById("nav-mobile-button-img")
+          ?.setAttribute("src", "menu.svg");
+        document
+          .getElementById("nav-mobile-button-img")
+          ?.setAttribute("alt", "Menu");
+        document
+          .getElementById("nav-mobile-button")
+          ?.setAttribute("aria-label", "Open Menu");
+      }
+
+      document.getElementById("nav-menu")?.classList.toggle("hidden");
+      document.getElementById("nav-menu")?.classList.toggle("flex");
+    });
+
+  function closeMenuOnClick() {
+    if (
+      document.getElementById("nav-mobile-button-img")?.getAttribute("src") ===
+      "x.svg"
+    ) {
+      document
+        .getElementById("nav-mobile-button-img")
+        ?.setAttribute("src", "menu.svg");
+      document
+        .getElementById("nav-mobile-button-img")
+        ?.setAttribute("alt", "Menu");
+      document
+        .getElementById("nav-mobile-button")
+        ?.setAttribute("aria-label", "Open Menu");
+      document.getElementById("nav-menu")?.classList.toggle("hidden");
+      document.getElementById("nav-menu")?.classList.toggle("flex");
+    }
+  }
+</script>
