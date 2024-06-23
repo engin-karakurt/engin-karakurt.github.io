@@ -55,8 +55,6 @@ export default function Slider({
               <a
                 className="w-full max-w-48 p-2 rounded-full border-2 border-gray-700/40 shadow-lg mb-2 hover:bg-black/5 duration-150 ease-linear"
                 href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Visit
               </a>
