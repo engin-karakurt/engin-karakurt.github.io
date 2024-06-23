@@ -29,7 +29,7 @@ export default function Slider({
           key={project.id}
           className="h-full flex flex-col justify-between items-center gap-8"
         >
-          <h3 className="text-2xl font-bold p-2">{project.title}</h3>
+          <h3 className="text-2xl font-semibold p-2">{project.title}</h3>
           {project.invert ? (
             <img
               loading="lazy"
