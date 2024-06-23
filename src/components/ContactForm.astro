@@ -1,38 +1,38 @@
 <form
-  class="m-auto min-w-fit w-full max-w-xs flex flex-col justify-center items-center gap-8"
+  class="m-auto min-w-fit w-full max-w-xs flex flex-col justify-center items-center gap-8 backdrop-blur-lg shadow-xl bg-gray-50/5 p-8 rounded-lg"
   action="https://formsubmit.co/b958481bea5dc4fda5dbe94e899f3a0c"
   method="POST"
   onsubmit="handleSubmit(event)"
 >
-  <label class="w-full flex flex-col gap-1">
+  <label class="w-full flex flex-col gap-1 text-lg">
     Your name
     <input
       type="text"
       name="name"
-      class="w-full bg-gray-950 border-2 border-gray-700 p-4 rounded-2xl"
+      class="w-full bg-gray-50/5 backdrop-blur-lg shadow-xl p-4 rounded-2xl text-base"
       required
     />
   </label>
-  <label class="w-full flex flex-col gap-1">
+  <label class="w-full flex flex-col gap-1 text-lg">
     Your email
     <input
       type="email"
       name="email"
-      class="w-full bg-gray-950 border-2 border-gray-700 p-4 rounded-2xl"
+      class="w-full bg-gray-50/5 backdrop-blur-lg shadow-xl p-4 rounded-2xl text-base"
       required
     />
   </label>
-  <label class="w-full flex flex-col gap-1">
+  <label class="w-full flex flex-col gap-1 text-lg">
     Your request
     <textarea
       name="message"
-      class="w-full bg-gray-950 border-2 border-gray-700 p-4 rounded-2xl"
+      class="w-full bg-gray-50/5 backdrop-blur-lg shadow-xl p-4 rounded-2xl text-base"
       required></textarea>
   </label>
   <button
     id="submit-button"
     type="submit"
-    class="flex flex-row justify-center items-center gap-2 w-full p-2 rounded-full border-2 border-gray-700"
+    class="flex flex-row justify-center items-center gap-2 w-full p-2 rounded-full border-2 shadow-lg border-gray-700/40 hover:bg-black/5 duration-150 ease-linear"
   >
     Send
     <div

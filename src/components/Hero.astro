@@ -5,20 +5,17 @@ import githubImage from "@images/github.svg";
 
 <section
   id="hero"
-  class="h-[calc(100svh-8rem)] flex flex-col justify-center items-center gap-16 mt-28"
+  class="h-[calc(100svh)] flex flex-col justify-center items-center gap-16 bg-no-repeat bg-cover bg-center bg-fixed"
+  style="background-image: url('/koeln.jpg');"
 >
-  <div class="flex flex-col justify-center items-center gap-1">
-    <h1 class="text-center text-3xl sm:text-4xl font-light">
+  <div
+    class="flex flex-col justify-center items-center gap-1 mt-28 backdrop-blur-sm p-8 rounded-lg"
+  >
+    <h1 class="text-center text-2xl sm:text-4xl font-extrabold drop-shadow-2xl">
       Hey! I'm Engin Karakurt.
     </h1>
-    <p
-      class="relative w-[max-content]
-        before:absolute before:inset-0
-        before:bg-black
-        before:animate-typewriter after:absolute after:inset-1 after:w-[0.1rem] after:animate-caret
-        after:bg-gray-100"
-    >
-      Full stack developer
+    <p class="text-center drop-shadow-2xl">
+      Full stack developer from Cologne, Germany.
     </p>
   </div>
 
@@ -26,15 +23,37 @@ import githubImage from "@images/github.svg";
     href="https://github.com/engin-karakurt"
     target="_blank"
     rel="noopener noreferrer"
-    class="flex items-center gap-4 p-4 rounded-full border-2 border-gray-700"
+    class="drop-shadow-2xl flex items-center gap-4 p-4 rounded-full border-2 backdrop-blur-lg hover:backdrop-blur-3xl transition-all duration-150 ease-in-out border-gray-700/25"
   >
     <Image
       loading={"eager"}
       draggable="false"
+      width={32}
+      height={32}
       alt=""
       class="invert size-8"
       src={githubImage}
     />
     My GitHub
   </a>
+
+  <p class="text-xs opacity-50 absolute bottom-2 right-2">
+    Thomas Wolf, <a class="underline" href="http://www.foto-tw.de"
+      >www.foto-tw.de</a
+    >, <a
+      class="underline"
+      href="https://commons.wikimedia.org/wiki/File:Hohenzollernbrücke_Köln.jpg"
+      >Hohenzollernbrücke Köln</a
+    >, <a
+      class="underline"
+      href="https://creativecommons.org/licenses/by-sa/3.0/legalcode"
+      rel="license">CC BY-SA 3.0</a
+    >
+  </p>
 </section>
+
+<style>
+  .tooltip {
+    @apply relative inline-block;
+  }
+</style>

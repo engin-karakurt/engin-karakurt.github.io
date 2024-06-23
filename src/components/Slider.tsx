@@ -7,6 +7,7 @@ export interface Project {
   imgSrc: string;
   description: string;
   link?: string;
+  invert?: boolean;
 }
 
 export default function Slider({
@@ -14,7 +15,7 @@ export default function Slider({
 }: Readonly<{ projects: Array<Project> }>) {
   return (
     <Carousel
-      className="border-2 border-gray-700 rounded-lg max-w-lg p-2"
+      className="bg-gray-50/5 backdrop-blur-lg shadow-xl rounded-lg max-w-lg p-2"
       showArrows={true}
       showStatus={true}
       showIndicators={false}
@@ -29,20 +30,30 @@ export default function Slider({
           className="h-full flex flex-col justify-between items-center gap-8"
         >
           <h3 className="text-2xl font-bold p-2">{project.title}</h3>
-          <img
-            loading="lazy"
-            className="rounded-lg max-w-60"
-            alt=""
-            src={project.imgSrc}
-            draggable="false"
-          />
+          {project.invert ? (
+            <img
+              loading="lazy"
+              className="rounded-lg max-w-60 invert"
+              alt=""
+              src={project.imgSrc}
+              draggable="false"
+            />
+          ) : (
+            <img
+              loading="lazy"
+              className="rounded-lg max-w-60"
+              alt=""
+              src={project.imgSrc}
+              draggable="false"
+            />
+          )}
           <div className="flex flex-col justify-center items-center gap-8">
             <p className="max-w-fit text-balance">
               {project.description + " "}
             </p>
             {project.link ? (
               <a
-                className="w-full max-w-48 p-2 rounded-full border-2 border-gray-700 mb-2"
+                className="w-full max-w-48 p-2 rounded-full border-2 border-gray-700/40 shadow-lg mb-2 hover:bg-black/5 duration-150 ease-linear"
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
