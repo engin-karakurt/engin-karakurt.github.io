@@ -11,12 +11,13 @@ import menuImage from "@images/menu.svg";
     <a href="#top" class="text-xl">Engin Karakurt</a>
     <nav id="nav" class="flex items-center">
       <button aria-label="Open Menu" id="nav-mobile-button">
-        <Image
+        <img
           id="nav-mobile-button-img"
+          loading={"eager"}
           width={24}
           height={24}
           class="sm:hidden invert"
-          src={menuImage}
+          src={menuImage.src}
           alt="Menu"
           draggable="false"
         />
