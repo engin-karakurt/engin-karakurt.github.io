@@ -1,3 +1,8 @@
+---
+import Image from "astro/components/Image.astro";
+import menuImage from "@images/menu.svg";
+---
+
 <header
   id="navbar"
   class="w-[calc(100%-2rem)] fixed top-0 left-0 z-50 bg-gray-50/5 backdrop-blur-xl shadow-xl rounded-full m-4 transition-transform duration-300"
@@ -6,12 +11,12 @@
     <a href="#top" class="text-xl">Engin Karakurt</a>
     <nav id="nav" class="flex items-center">
       <button aria-label="Open Menu" id="nav-mobile-button">
-        <img
+        <Image
           id="nav-mobile-button-img"
           width={24}
           height={24}
           class="sm:hidden invert"
-          src="src/assets/images/menu.svg"
+          src={menuImage}
           alt="Menu"
           draggable="false"
         />
@@ -35,6 +40,9 @@
 </header>
 
 <script>
+  import menuImage from "@images/menu.svg";
+  import closeImage from "@images/x.svg";
+
   document.getElementById("about-me-link")?.addEventListener("click", () => {
     document.getElementById("about-me-section")?.scrollIntoView();
     closeMenuOnClick();
@@ -54,11 +62,11 @@
       if (
         document
           .getElementById("nav-mobile-button-img")
-          ?.getAttribute("src") === "src/assets/images/menu.svg"
+          ?.getAttribute("src") === menuImage.src
       ) {
         document
           .getElementById("nav-mobile-button-img")
-          ?.setAttribute("src", "src/assets/images/x.svg");
+          ?.setAttribute("src", closeImage.src);
         document
           .getElementById("nav-mobile-button-img")
           ?.setAttribute("alt", "Close");
@@ -68,7 +76,7 @@
       } else {
         document
           .getElementById("nav-mobile-button-img")
-          ?.setAttribute("src", "src/assets/images/menu.svg");
+          ?.setAttribute("src", menuImage.src);
         document
           .getElementById("nav-mobile-button-img")
           ?.setAttribute("alt", "Menu");
@@ -84,11 +92,11 @@
   function closeMenuOnClick() {
     if (
       document.getElementById("nav-mobile-button-img")?.getAttribute("src") ===
-      "src/assets/images/x.svg"
+      closeImage.src
     ) {
       document
         .getElementById("nav-mobile-button-img")
-        ?.setAttribute("src", "src/assets/images/menu.svg");
+        ?.setAttribute("src", menuImage.src);
       document
         .getElementById("nav-mobile-button-img")
         ?.setAttribute("alt", "Menu");
