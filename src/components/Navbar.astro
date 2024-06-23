@@ -11,7 +11,7 @@
           width={24}
           height={24}
           class="sm:hidden invert"
-          src="menu.svg"
+          src="src/assets/images/menu.svg"
           alt="Menu"
           draggable="false"
         />
@@ -54,11 +54,11 @@
       if (
         document
           .getElementById("nav-mobile-button-img")
-          ?.getAttribute("src") === "menu.svg"
+          ?.getAttribute("src") === "src/assets/images/menu.svg"
       ) {
         document
           .getElementById("nav-mobile-button-img")
-          ?.setAttribute("src", "x.svg");
+          ?.setAttribute("src", "src/assets/images/x.svg");
         document
           .getElementById("nav-mobile-button-img")
           ?.setAttribute("alt", "Close");
@@ -68,7 +68,7 @@
       } else {
         document
           .getElementById("nav-mobile-button-img")
-          ?.setAttribute("src", "menu.svg");
+          ?.setAttribute("src", "src/assets/images/menu.svg");
         document
           .getElementById("nav-mobile-button-img")
           ?.setAttribute("alt", "Menu");
@@ -84,11 +84,11 @@
   function closeMenuOnClick() {
     if (
       document.getElementById("nav-mobile-button-img")?.getAttribute("src") ===
-      "x.svg"
+      "src/assets/images/x.svg"
     ) {
       document
         .getElementById("nav-mobile-button-img")
-        ?.setAttribute("src", "menu.svg");
+        ?.setAttribute("src", "src/assets/images/menu.svg");
       document
         .getElementById("nav-mobile-button-img")
         ?.setAttribute("alt", "Menu");
