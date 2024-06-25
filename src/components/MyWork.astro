@@ -1,30 +1,48 @@
 ---
-import Slider, { type Project } from "@components/Slider";
+import Project, { type ProjectType } from "./Project.astro";
+import kdeLogo from "@images/kdeLogo.webp";
+import bootstrapAcademyLogo from "@images/bootstrapAcademyLogo.webp";
 
-let projects: Project[] = [
+let projects: ProjectType[] = [
   {
-    id: 1,
     title: "KDE",
-    imgSrc: "kdeLogo.svg",
+    imgSrc: kdeLogo,
     description:
-      "I have contributed to the KDE Community. Click below to visit my KDE GitLab Profile where you can see my contributions!",
+      "I have contributed to the KDE Community, specifically to KDE Plasma, a Linux desktop environment. One specific task involved implementing UI adjustments to make the interface simpler to navigate for users. Click below to visit my KDE GitLab profile to see my contributions!",
     link: "https://invent.kde.org/engin-karakurt",
+    badges: [
+      {
+        label: "C++",
+      },
+      {
+        label: "Qt",
+      },
+      {
+        label: "QML",
+      },
+      {
+        label: "Git",
+      },
+    ],
   },
   {
-    id: 2,
-    title: "Coming soon",
-    imgSrc: "emoji-laughing.svg",
-    description: "More Projects!",
-    invert: true,
+    title: "Bootstrap Academy",
+    imgSrc: bootstrapAcademyLogo,
+    description:
+      "I have contributed to the Bootstrap Academy, an online platform where people can learn computer science topics for free. I have revised confusing texts regarding options for obtaining platform currency to make them more understandable for users. Click below to visit my GitHub profile to see my contributions!",
+    link: "https://github.com/engin-karakurt",
+    badges: [
+      {
+        label: "JSON",
+      },
+    ],
   },
 ];
 ---
 
 <section id="my-work-section" class="min-h-svh p-8 flex flex-col gap-8">
   <h2 class="mt-20 text-4xl font-bold">My Work</h2>
-  <div
-    class="w-full h-full sm:m-auto sm:flex sm:flex-col sm:justify-center sm:items-center"
-  >
-    <Slider client:visible projects={projects} />
+  <div class="w-full flex flex-col justify-center items-center gap-8">
+    {projects.map((project) => <Project project={project} />)}
   </div>
 </section>

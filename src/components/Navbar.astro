@@ -4,7 +4,7 @@ import menuImage from "@images/menu.svg";
 
 <header
   id="navbar"
-  class="w-[calc(100%-2rem)] fixed top-0 left-0 z-50 bg-gray-50/5 backdrop-blur-xl shadow-xl rounded-full m-4 transition-transform duration-300"
+  class="w-[calc(100%-2rem)] fixed top-0 left-0 z-50 bg-gray-50/5 backdrop-blur-xl shadow-xl rounded-full m-4"
 >
   <div class="h-20 flex justify-between items-center px-8">
     <a href="#top" class="text-xl">Engin Karakurt</a>
@@ -24,16 +24,22 @@ import menuImage from "@images/menu.svg";
     </nav>
     <ul
       id="nav-menu"
-      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 border-2 bg-gray-50/5 sm:bg-transparent sm:backdrop-blur-none backdrop-blur-lg sm:shadow-none shadow-xl border-gray-700/25 sm:border-0 rounded-lg transition-all"
+      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 bg-gradient-to-r from-[#4e3e41] via-[#ac450a] to-[#55220c] sm:bg-none sm:bg-transparent sm:shadow-none shadow-xl rounded-lg"
     >
       <li>
-        <a id="about-me-link" href="#about-me" class="text-xl">About Me</a>
+        <a id="about-me-link" href="#about-me" class="text-xl link-underline"
+          >About Me</a
+        >
       </li>
       <li>
-        <a id="my-work-link" href="#my-work" class="text-xl">My Work</a>
+        <a id="my-work-link" href="#my-work" class="text-xl link-underline"
+          >My Work</a
+        >
       </li>
       <li>
-        <a id="contact-link" href="#contact" class="text-xl">Contact</a>
+        <a id="contact-link" href="#contact" class="text-xl link-underline"
+          >Contact</a
+        >
       </li>
     </ul>
   </div>
@@ -108,3 +114,20 @@ import menuImage from "@images/menu.svg";
     }
   }
 </script>
+
+<style>
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+  }
+
+  .link-underline:hover {
+    background-size: 100% 2px;
+    background-position: 0 100%;
+  }
+</style>

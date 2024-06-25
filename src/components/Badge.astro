@@ -1,0 +1,18 @@
+---
+interface Props {
+  imgSrc?: ImageMetadata;
+  label: string;
+}
+
+export interface BadgeType {
+  imgSrc?: ImageMetadata;
+  label: string;
+}
+
+const { imgSrc, label } = Astro.props;
+---
+
+<span
+  class="rounded-lg bg-gray-50/5 px-2 py-1 text-xs font-medium shadow-xl text-center"
+  >{label}</span
+>
