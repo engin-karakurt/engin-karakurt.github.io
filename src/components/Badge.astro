@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+
 interface Props {
   imgSrc?: ImageMetadata;
   label: string;
@@ -13,6 +15,14 @@ const { imgSrc, label } = Astro.props;
 ---
 
 <span
-  class="rounded-lg bg-gray-50/5 px-2 py-1 text-xs font-medium shadow-xl text-center"
-  >{label}</span
+  class="rounded-lg bg-gray-50/5 px-2 py-1 text-xs font-medium shadow-xl text-center flex justify-center items-center gap-1"
 >
+  {
+    imgSrc ? (
+      <Image src={imgSrc} alt={""} width={16} height={16} class="size-4" />
+    ) : (
+      ""
+    )
+  }
+  {label}
+</span>

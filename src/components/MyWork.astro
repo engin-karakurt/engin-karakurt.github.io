@@ -2,6 +2,9 @@
 import Project, { type ProjectType } from "./Project.astro";
 import kdeLogo from "@images/kdeLogo.webp";
 import bootstrapAcademyLogo from "@images/bootstrapAcademyLogo.webp";
+import cppLogo from "@images/cpp_logo.svg";
+import qtLogo from "@images/qt_logo.svg";
+import jsonLogo from "@images/json_logo.svg";
 
 let projects: ProjectType[] = [
   {
@@ -12,16 +15,15 @@ let projects: ProjectType[] = [
     link: "https://invent.kde.org/engin-karakurt",
     badges: [
       {
+        imgSrc: cppLogo,
         label: "C++",
       },
       {
+        imgSrc: qtLogo,
         label: "Qt",
       },
       {
         label: "QML",
-      },
-      {
-        label: "Git",
       },
     ],
   },
@@ -33,6 +35,7 @@ let projects: ProjectType[] = [
     link: "https://github.com/engin-karakurt",
     badges: [
       {
+        imgSrc: jsonLogo,
         label: "JSON",
       },
     ],

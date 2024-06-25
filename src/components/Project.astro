@@ -21,6 +21,8 @@ const { project } = Astro.props;
     <Image
       loading={"lazy"}
       draggable="false"
+      width={32}
+      height={32}
       alt=""
       src={project.imgSrc}
       class="size-8 rounded-lg shadow-xl"
@@ -51,7 +53,7 @@ const { project } = Astro.props;
   }
 
   <a
-    class="w-24 text-center drop-shadow-2xl p-2 rounded-full border-2 backdrop-blur-lg hover:backdrop-blur-3xl transition-all duration-150 ease-in-out border-gray-700/25"
+    class="w-24 text-center border-2 shadow-lg border-gray-700/40 hover:bg-black/5 duration-150 ease-linear p-2 rounded-full"
     href={project.link}
   >
     Visit</a
