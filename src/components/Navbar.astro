@@ -24,7 +24,7 @@ import menuImage from "@images/menu.svg";
     </nav>
     <ul
       id="nav-menu"
-      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 bg-gray-50/5 backdrop-blur-xl rounded-lg"
+      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 bg-gray-50/5 backdrop-blur-xl sm:backdrop-blur-none sm:bg-transparent rounded-lg"
     >
       <li>
         <a id="about-me-link" href="#about-me" class="text-xl link-underline"
@@ -141,5 +141,8 @@ import menuImage from "@images/menu.svg";
     left: 0;
     backdrop-filter: blur(24px);
     z-index: -1;
+    @media (min-width: 640px) {
+      display: none;
+    }
   }
 </style>
