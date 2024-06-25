@@ -4,7 +4,7 @@ import menuImage from "@images/menu.svg";
 
 <header
   id="navbar"
-  class="w-[calc(100%-2rem)] fixed top-0 left-0 z-50 bg-gray-50/5 backdrop-blur-xl shadow-xl rounded-full m-4"
+  class="navbar-before w-[calc(100%-2rem)] fixed top-0 left-0 z-50 bg-gray-50/5 rounded-full m-4"
 >
   <div class="h-20 flex justify-between items-center px-8">
     <a href="#top" class="text-xl">Engin Karakurt</a>
@@ -24,7 +24,7 @@ import menuImage from "@images/menu.svg";
     </nav>
     <ul
       id="nav-menu"
-      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 bg-gradient-to-r from-[#4e3e41] via-[#ac450a] to-[#55220c] sm:bg-none sm:bg-transparent sm:shadow-none shadow-xl rounded-lg"
+      class="hidden z-50 sm:flex sm:flex-row items-center w-[calc(100%-4rem)] sm:w-auto mx-8 sm:mx-0 text-center fixed sm:static flex-col top-32 left-0 gap-8 p-4 bg-gray-50/5 backdrop-blur-xl rounded-lg"
     >
       <li>
         <a id="about-me-link" href="#about-me" class="text-xl link-underline"
@@ -129,5 +129,17 @@ import menuImage from "@images/menu.svg";
   .link-underline:hover {
     background-size: 100% 2px;
     background-position: 0 100%;
+  }
+
+  .navbar-before::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(24px);
+    z-index: -1;
   }
 </style>
