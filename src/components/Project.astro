@@ -1,0 +1,59 @@
+---
+import type { ImageMetadata } from "astro";
+import Image from "astro/components/Image.astro";
+import Badge, { type BadgeType } from "./Badge.astro";
+
+export interface ProjectType {
+  title: string;
+  imgSrc: ImageMetadata;
+  description: string;
+  link: string;
+  badges?: BadgeType[];
+}
+
+const { project } = Astro.props;
+---
+
+<div
+  class="w-full max-w-lg rounded-lg bg-gray-50/5 backdrop-blur-xl shadow-xl p-4 flex flex-col gap-4"
+>
+  <div class="flex flex-row justify-start items-center gap-4">
+    <Image
+      loading={"lazy"}
+      draggable="false"
+      alt=""
+      src={project.imgSrc}
+      class="size-8 rounded-lg shadow-xl"
+    />
+
+    <h3 class="text-xl font-bold">
+      {project.title}
+    </h3>
+  </div>
+
+  <p class="text-pretty text-sm">
+    {project.description}
+  </p>
+
+  {
+    project.badges ? (
+      <div class="bg-gray-50/5 p-4 shadow-xl">
+        <p class="mb-4">Skills</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {project.badges.map((badge: BadgeType) => (
+            <Badge imgSrc={badge.imgSrc} label={badge.label} />
+          ))}
+        </div>
+      </div>
+    ) : (
+      ""
+    )
+  }
+
+  <a
+    class="w-24 text-center drop-shadow-2xl p-2 rounded-full border-2 backdrop-blur-lg hover:backdrop-blur-3xl transition-all duration-150 ease-in-out border-gray-700/25"
+    href={project.link}
+  >
+    Visit</a
+  >
+</div>
