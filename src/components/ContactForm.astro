@@ -2,7 +2,7 @@
   class="m-auto min-w-fit w-full max-w-xs flex flex-col justify-center items-center gap-8 backdrop-blur-lg shadow-xl bg-gray-50/5 p-8 rounded-lg"
   action="https://formsubmit.co/b958481bea5dc4fda5dbe94e899f3a0c"
   method="POST"
-  onsubmit="handleSubmit(event)"
+  onsubmit="event => handleSubmit(event)"
 >
   <label class="w-full flex flex-col gap-1 text-lg">
     Your name
@@ -51,7 +51,7 @@
 <script>
   let isLoading = false;
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async (event: Event) => {
     event.preventDefault();
     isLoading = true;
     // Perform the form submission here

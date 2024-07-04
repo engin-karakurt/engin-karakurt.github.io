@@ -19,7 +19,14 @@ const { imgSrc, label } = Astro.props;
 >
   {
     imgSrc ? (
-      <Image src={imgSrc} alt={""} width={16} height={16} class="size-4" />
+      <Image
+        src={imgSrc}
+        alt={""}
+        width={16}
+        height={16}
+        class="size-4"
+        draggable="false"
+      />
     ) : (
       ""
     )
