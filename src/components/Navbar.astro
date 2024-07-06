@@ -37,8 +37,10 @@ import menuImage from "@images/menu.svg";
         >
       </li>
       <li>
-        <a id="contact-link" href="#contact" class="text-xl link-underline"
-          >Contact</a
+        <a
+          id="contact-me-link"
+          href="#contact-me"
+          class="text-xl link-underline">Contact Me</a
         >
       </li>
     </ul>
@@ -57,8 +59,8 @@ import menuImage from "@images/menu.svg";
     document.getElementById("my-work-section")?.scrollIntoView();
     closeMenuOnClick();
   });
-  document.getElementById("contact-link")?.addEventListener("click", () => {
-    document.getElementById("contact-section")?.scrollIntoView();
+  document.getElementById("contact-me-link")?.addEventListener("click", () => {
+    document.getElementById("contact-me-section")?.scrollIntoView();
     closeMenuOnClick();
   });
 
