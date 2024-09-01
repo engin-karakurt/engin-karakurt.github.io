@@ -36,13 +36,6 @@ import menuImage from "@images/menu.svg";
           >My Work</a
         >
       </li>
-      <li>
-        <a
-          id="contact-me-link"
-          href="#contact-me"
-          class="text-xl link-underline">Contact Me</a
-        >
-      </li>
     </ul>
   </div>
 </header>
@@ -57,10 +50,6 @@ import menuImage from "@images/menu.svg";
   });
   document.getElementById("my-work-link")?.addEventListener("click", () => {
     document.getElementById("my-work-section")?.scrollIntoView();
-    closeMenuOnClick();
-  });
-  document.getElementById("contact-me-link")?.addEventListener("click", () => {
-    document.getElementById("contact-me-section")?.scrollIntoView();
     closeMenuOnClick();
   });
 
