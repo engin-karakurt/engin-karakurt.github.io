@@ -2,6 +2,8 @@
 import Project, { type ProjectType } from "./Project.astro";
 import kdeLogo from "@images/kdeLogo.webp";
 import bootstrapAcademyLogo from "@images/bootstrapAcademyLogo.webp";
+import microbotLogo from "@images/microbotLogo.webp";
+import javaLogo from "@images/java.svg";
 import cppLogo from "@images/cpp_logo.svg";
 import qtLogo from "@images/qt_logo.svg";
 import jsonLogo from "@images/json_logo.svg";
@@ -37,6 +39,19 @@ let projects: ProjectType[] = [
       {
         imgSrc: jsonLogo,
         label: "JSON",
+      },
+    ],
+  },
+  {
+    title: "Microbot",
+    imgSrc: microbotLogo,
+    description:
+      "I have contributed to Microbot, an automated client for the game Old School RuneScape based on RuneLite, which uses a plugin system to enable scripting. I have changed a script for a minigame to have more human-like behaviour while doing specific actions. Click below to visit my GitHub profile to see all my contributions!",
+    link: "https://github.com/engin-karakurt",
+    badges: [
+      {
+        imgSrc: javaLogo,
+        label: "Java",
       },
     ],
   },
